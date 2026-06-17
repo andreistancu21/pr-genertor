@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Workshop Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">AI Workshop</p>
+        <h1>Prompt Lab pentru sesiuni hands-on</h1>
+        <p class="subtitle">
+          Experimenteaza structuri de prompt, tone of voice si evaluare rapida,
+          direct in browser.
+        </p>
+      </section>
+
+      <section class="card studio">
+        <h2>1. Prompt Studio</h2>
+        <label for="goal">Scopul promptului</label>
+        <input id="goal" type="text" placeholder="Ex: Rezuma meeting notes pentru CEO" />
+
+        <label for="audience">Audienta</label>
+        <input id="audience" type="text" placeholder="Ex: Echipa de produs" />
+
+        <label for="constraints">Constrangeri</label>
+        <textarea
+          id="constraints"
+          rows="4"
+          placeholder="Ex: raspuns sub 120 de cuvinte, ton profesionist, include 3 bullet-uri"
+        ></textarea>
+
+        <div class="actions">
+          <button id="generateBtn">Genereaza prompt</button>
+          <button id="clearBtn" class="ghost">Reseteaza</button>
+        </div>
+
+        <pre id="promptOutput" class="output">Promptul tau va aparea aici...</pre>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>2. Use Cases</h2>
+          <div id="useCaseList" class="use-cases"></div>
+        </article>
+
+        <article class="card">
+          <h2>3. Mini Quiz</h2>
+          <p class="quiz-q">Ce inseamna o constrangere buna intr-un prompt?</p>
+          <div class="quiz-options">
+            <button data-answer="bad">Sa fie cat mai vaga</button>
+            <button data-answer="good">Sa fie specifica si masurabila</button>
+            <button data-answer="bad">Sa foloseasca cat mai multe cuvinte tehnice</button>
+          </div>
+          <p id="quizFeedback" class="feedback"></p>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+:root {
+  --bg: #f4efe6;
+  --bg-2: #e5d8bf;
+  --ink: #1f1f1f;
+  --muted: #5b554d;
+  --accent: #005f73;
+  --accent-2: #ca6702;
+  --card: rgba(255, 250, 241, 0.78);
+  --border: rgba(31, 31, 31, 0.12);
+  --radius: 18px;
+  --shadow: 0 14px 30px rgba(56, 48, 34, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 15%, #f9f0d5 0, transparent 38%),
+    radial-gradient(circle at 90% 80%, #e7d4b0 0, transparent 34%),
+    linear-gradient(120deg, var(--bg), var(--bg-2));
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background-image: radial-gradient(#000 0.45px, transparent 0.45px);
+  background-size: 3px 3px;
+}
+
+.page {
+  position: relative;
+  z-index: 2;
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  padding: 48px 0 64px;
+  display: grid;
+  gap: 22px;
+}
+
+.hero {
+  animation: slideUp 0.55s ease;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.03;
+}
+
+.subtitle {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(5px);
+  background: var(--card);
+  padding: 22px;
+  animation: slideUp 0.7s ease both;
+}
+
+.studio {
+  display: grid;
+  gap: 10px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 13px;
+  font: inherit;
+  background: #fff;
+}
+
+.actions {
+  margin-top: 4px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 15px;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+  background: var(--accent);
+  color: #fff;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink);
+}
+
+.output {
+  margin: 0;
+  border-radius: 12px;
+  padding: 14px;
+  background: #101214;
+  color: #e9ecef;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  white-space: pre-wrap;
+  min-height: 128px;
+}
+
+.grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.use-cases {
+  display: grid;
+  gap: 10px;
+}
+
+.use-case {
+  border-left: 4px solid var(--accent-2);
+  background: rgba(202, 103, 2, 0.09);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.use-case strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.quiz-q {
+  margin-top: 0;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 9px;
+}
+
+.quiz-options button {
+  text-align: left;
+  border-radius: 11px;
+  text-transform: none;
+  letter-spacing: 0;
+  background: #f6f0e5;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+}
+
+.feedback {
+  min-height: 24px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "pr-genertor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small localhost webapp for an AI workshop",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
