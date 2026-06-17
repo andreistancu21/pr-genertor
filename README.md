@@ -42,7 +42,9 @@ Permisiuni necesare in workflow:
 
 - `pull-requests: write`
 - `contents: write`
+- `models: read`
 
 Nota:
 
 - pentru PR-uri din fork, workflow-ul poate actualiza descrierea PR-ului, dar in general nu poate face push in branch-ul fork-ului cu token-ul implicit.
+- daca primesti `AI request failed with status 401`, verifica daca GitHub Models este disponibil pentru contul/org-ul repo-ului si daca workflow-ul ruleaza cu permisiunea `models: read`.
